@@ -75,11 +75,11 @@ module.exports = {
     // production: true    // Treats this network as if it was a public net. (default: false)
     // }
     waterfall: {
-      from: '0xeBD561D706A901eCd7836c83c0F1929831bbda64',
+      from: 'a7062A2Bd7270740f1d15ab70B3Dee189A87b6DE',
       // from: '0x11f8d00f0616d8071532f64f106666738d913a41',
 
       provider: () => new HDWalletProvider({
-        privateKeys: ["ededfd51467443b862f8ea12893fadfa686f747333b431726a2146b45152a218"],
+        privateKeys: ["07201008f00b31de405a0af22ff04871044e027878929b7b47569ca76555ff09\n"],
         providerOrUrl: `https://rpc.waterfall.network/rpc`,
       }),
       // url: "https://rpc.waterfall.network/rpc",
@@ -87,6 +87,7 @@ module.exports = {
       network_id: 333777333,
       confirmations: 1,
       timeoutBlocks: 200,
+      networkCheckTimeoutnetworkCheckTimeout: 10000,
       skipDryRun: true,
       CPADContractAddr: '0x8301f2213c0eed49a7e28ae4c3e91722919b8b47',
       NFTContractAddr: '0x8301f2213c0eed49a7e28ae4c3e91722919b8b47'

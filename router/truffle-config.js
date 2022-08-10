@@ -87,6 +87,7 @@ module.exports = {
       network_id: 333777333,
       confirmations: 1,
       timeoutBlocks: 200,
+      networkCheckTimeoutnetworkCheckTimeout: 10000,
       skipDryRun: true,
     },
     hetsner: {

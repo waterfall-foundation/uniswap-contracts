@@ -7,5 +7,8 @@
     "@uniswap/v2-core": "^1.0.1",
     "base64-sol": "^1.1.0",
     "@truffle/hdwallet-provider": "^2.0.0"
+  },
+  "scripts": {
+    "deploy:waterfall": "truffle migrate --network waterfall"
   }
 }
