@@ -1,30 +1,4 @@
-### Deploy core
-```
- cd core/
- yarn install
- yarn deploy:waterfall
-```
-
-### Deploy multicall
-```
- cd multicall/
- yarn install
- yarn deploy:waterfall
-```
-
-### Deploy router
-
-```
- cd router/
- yarn install
-```
-**set `factoryAdr`, `wethAdr` in /migrations/2_deploy_router.js**
-
-```
- yarn deploy:waterfall
-```
-
-***
+# v3 deploy
 ## v3-core
 
 deploy **UniswapV3Factory**
@@ -43,6 +17,8 @@ deploy **UniswapV3Factory**
  yarn install
 ```
 
+set ***factoryAdr*** and ***wethAdr*** in scripts/deploy.js
+
 ### deploy: 
     Multicall2
     Quoter
@@ -57,10 +33,20 @@ run
  npx hardhat run scripts/deploy.js --network waterfall
 ```
 
-### deploy:
-    TickLens
+# UI
 
-run
 ```
- npx hardhat run scripts/deploy2.js --network waterfall
+  yarn install
+  yarn start
 ```
+### set contract addresses
+go to src/constants/addressess.ts and change:
+- MULTICALL_ADDRESS
+- V3_CORE_FACTORY_ADDRESSES
+- QUOTER_ADDRESSES
+- NONFUNGIBLE_POSITION_MANAGER_ADDRESSES
+- SWAP_ROUTER_ADDRESSES
+- V3_MIGRATOR_ADDRESSES
+
+go to src/constants/tokens.ts and change:
+- WETH9_EXTENDED

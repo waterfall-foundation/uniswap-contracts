@@ -1,23 +1,25 @@
 const web3 = require('web3')
-//Multicall2: 0xffC405e4D75471dcDBd3E53c9221eb1d4dE8374b
-//Quoter:0x968aF495C501771FE44af46B9f8817773b84C464
-//NFTDescriptor:0xEB1cBDD8DA98dcdB19D181b09AE5be3C9733Eaf6
-//NonfungibleTokenPositionDescriptor:0x87F03d421990D85AEE3A6F1AEA3EfaD457e74Db6
-//NonfungiblePositionManager:0xc2b8611391D184aa0390381aDF43C581064eFCED
-//SwapRouter:0x0C2d8C364b508BC6e642f5D15BdD5335da8b6Dee
-//V3Migrator:0xE25C7AF5dc0329ECD70053FE71807B731E40eE84
+/*
+WETH deployed at: 0x219ed1326b82c468f825cbD727dbaf66810a619C
+UniswapInterfaceMulticall address: 0x6e686603139d488F10F1fEAfc8514e6AEaB06Ed5
+Quoter address: 0xB77FcD9Ef202878b6e522645996103f974024A0a
+NFTDescriptor address: 0xa917F25DdC3B58a51ECB45630BFA5f5B29E65D9d
+NonfungibleTokenPositionDescriptor address: 0xc1ef5faBC06F63A6270d657F6930976FAd056649
+NonfungiblePositionManager address: 0x25799ea3029760fA62837636F576bc73Fa4Dd0f9
+SwapRouter address: 0xaEe97E94eeaCc91f9135c832CD7ddd2d863b6A9b
+V3Migrator address: 0x6FAd5780a5Fe15ABa6e6c06d2BaF93FA9F2aBb91
+*/
 
 async function main() {
-  const factoryAdr = '0xF124BbD27fe529262fb9997e090e658b180c55C1'
-  let wethAdr = '0x23aB776efA34c5B7A0de7d0dEC55C779b65E52De'
+  const factoryAdr = '0xc99d2881497521b60aE190Cd92373e4df2b03897'
+  let wethAdr = '0x219ed1326b82c468f825cbD727dbaf66810a619C'
 
   if(!wethAdr) {
     const WETH = await ethers.getContractFactory('WETH')
     const _WETH = await WETH.deploy()
-    console.log('WETH address:', _WETH.address)
     wethAdr =  _WETH.address
   }
-  // const wethAdr =  '0x4FB2Ae8d6BA9588305E09e7713f8f759636fc2c7'
+  console.log('WETH deployed at:', wethAdr)
 
   const UniswapInterfaceMulticall = await ethers.getContractFactory('UniswapInterfaceMulticall')
   const _UniswapInterfaceMulticall = await UniswapInterfaceMulticall.deploy()
