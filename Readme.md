@@ -39,10 +39,13 @@ run
   yarn install
   yarn start
 ```
+## change factory address
+ - go to node_modules/@uniswap/v3-sdk/dist/constants.d.ts and set ***FACTORY_ADDRESS***
+ - then run ```yarn patch-package @uniswap/v3-sdk```
+
 ### set contract addresses
 go to src/constants/addressess.ts and change:
 - MULTICALL_ADDRESS
-- V3_CORE_FACTORY_ADDRESSES
 - QUOTER_ADDRESSES
 - NONFUNGIBLE_POSITION_MANAGER_ADDRESSES
 - SWAP_ROUTER_ADDRESSES
